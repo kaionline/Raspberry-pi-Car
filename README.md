@@ -11,3 +11,7 @@ Viewer.cpp:70:9: error: ‘char* strncpy(char*, const char*, size_t)’ specifie
   ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cc1plus: all warnings being treated as errors
 make: *** [CommonCppMakefile:133: Bin/Intermediate/Arm-Release/SimpleViewer/Viewer.o] Error 1
+
+
+libOpenNI2.so: ELF 64-bit LSB shared object, ARM aarch64, version 1 (GNU/Linux), dynamically linked, BuildID[sha1]=d30d116ba201cce00db4754a16eaed71237fc5c9, not stripped
+
