@@ -1,0 +1,45 @@
+<h2 id="1-download-sdk-and-documentation">1. Download SDK and Documentation</h2>
+<p><a href="https://www.dropbox.com/s/l9sawllbmvqo4ld/OpenNI_2.3.0.63.tar.gz?dl=0">SDK&amp;Demo download</a><br>
+中国大陆地区请访问<a href="https://pan.baidu.com/s/1iAEpE-VqfqY4Y2vPQm5aSQ">百度网盘</a>，提取码: be87</p>
+<h2 id="2-we-choose-arm64-and-make-the-example-as-follows">2. We choose Arm64 and make the example as follows:</h2>
+<h3 id="to-run-visual-samples-e-g-simpleviewer-you-will-need-freeglut3-header-and-libaries-please-install">To run visual samples(e.g., SimpleViewer), you will need freeglut3 header and libaries, please install:</h3>
+<pre><code>$ sudo apt-get install build-essential freeglut3 freeglut3-dev
+</code></pre>
+<p>check udev version, Orbbec Driver need libudev.so.1, if can't find it, can make symbolic link from libudev.so.x.x,<br>
+which usually locate in /lib/x86_64-linux-gnu or /lib/i386-linux-gnu</p>
+<pre><code>$ldconfig -p | grep libudev.so.1
+$cd /lib/aarch64-linux-gnu
+$sudo ln -s libudev.so.x.x.x libudev.so.1
+</code></pre>
+<h3 id="copy-tgz-file-to-any-place-you-want-e-g-home">copy tgz file to any place you want(e.g., Home)</h3>
+<h3 id="unzip-tgz-file">unzip tgz file</h3>
+<pre><code>$ tar zxvf OpenNI_2.3.0.63.tar.gz
+$ cd OpenNI_2.3.0.63/Linux/OpenNI-Linux-Arm64-2.3.0.63
+</code></pre>
+<h1 id="run-install-sh-to-generate-opennidevenvironment-which-contains-openni-development-environment-run-sudo-chmod-777-install-sh-for-elevated-permission">run <a href="http://install.sh">install.sh</a> to generate OpenNIDevEnvironment, which contains OpenNI development environment (run sudo chmod 777 <a href="http://install.sh">install.sh</a> for elevated permission)</h1>
+<pre><code>$ sudo ./install.sh
+</code></pre>
+<ul>
+<li>please replug in the device for usb-register</li>
+</ul>
+<h2 id="add-environment-variables">add environment variables</h2>
+<pre><code>$ source OpenNIDevEnvironment
+</code></pre>
+<h1 id="build-sample-e-g-simpleviewer">build sample(e.g., SimpleViewer)</h1>
+<pre><code>$ cd Samples/SimpleViewer
+$ make
+</code></pre>
+<h2 id="run-sample">run sample</h2>
+<p>connect sensor</p>
+<pre><code>$ cd Bin/Arm64-Release
+$ ./SimpleViewer
+</code></pre>
+<p>now you should be able to see a GUI window showing the depth stream video</p>
+<ul>
+<li>for using with Astra Embedded S/Stereo S<br>
+<img src="_img/new-embedded-s.jpg" alt="new-embedded-s"></li>
+</ul>
+<p>please change the resolution in 'orbbec.ini' to 'Resolution=17' for Depth and IR streams</p>
+<h2 id="documentation">Documentation</h2>
+<pre><code>OpenNI_2.3.0.63/Windows/Astra OpenNI2 Development Instruction(x64)_V1.3/OpenNI2/OpenNI-Windows-x64-2.3.0.63/Documentation/OpenNI.chm
+</code></pre>
